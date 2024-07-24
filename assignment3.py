@@ -5,7 +5,7 @@ def getMatrix():
     for i in range(m):
         x = []
         for j in range(n):
-            x.append(int(input("Enter element for a[%d][%d]: "%(i+1,j+1))));
+            x.append(int(input("Enter element for a[%d][%d]: "%(i+1,j+1))))
         matrix.append(x)
 
     return matrix
