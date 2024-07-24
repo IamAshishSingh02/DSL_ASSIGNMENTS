@@ -1,17 +1,17 @@
 def getMatrix():
     m = int(input("Enter number of rows: "))
     n = int(input("Enter number of columns:"))
-    matrix = list();
+    matrix = list()
     for i in range(m):
-        x = [];
+        x = []
         for j in range(n):
             x.append(int(input("Enter element for a[%d][%d]: "%(i+1,j+1))));
-        matrix.append(x);
+        matrix.append(x)
 
-    return matrix;
+    return matrix
 
 def triangular(a):
-    print(a);
+    print(a)
     for x in range(1, len(a)):
         for y in range(x):
             if(a[x][y] != 0):
