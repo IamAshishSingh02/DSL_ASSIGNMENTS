@@ -1,7 +1,5 @@
 #Sparse Matrix Input Func
 def spr_mat(m,n):
-    m=int(input("Enter number of Rows: "))
-    n=int(input("Enter number of Columns: "))
     spr=[[m,n,0]]
     c=0
     for i in range(m):
@@ -24,3 +22,7 @@ def simple_trans(spr_mat):
                 mt_mat.append([spr_mat[j][1],spr_mat[j][0],spr_mat[j][2]])
     return mt_mat
 
+m=int(input("Enter number of Rows: "))
+n=int(input("Enter number of Columns: "))
+mat=spr_mat(m,n)
+print(mat)
