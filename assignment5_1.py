@@ -9,9 +9,9 @@ def linearsearch(key,a):
     return -1
 
 a=[]
-key=int(input("Element to be Found: "))
+key=int(input("Element to be Found b/w 1-100: "))
 for i in range(1,100):
-    a.append(2*i)
+    a.append(i)
 linearsearch(key,a)
 print(f"Number of Operations in Linear Search is: {c}")
 
@@ -56,4 +56,37 @@ def sentinelsearch(a,key):
 
 index = sentinelsearch(a,key)
 print(f"Number of Operations in Sentinel Search: {e}")
+
+#Fibonacci Search
+f=0
+def fibonacci_search(arr, x):
+    global f
+    fibMMm2 = 0 
+    fibMMm1 = 1 
+    fibM = fibMMm2 + fibMMm1 
+    while (fibM < len(arr)): 
+        fibMMm2 = fibMMm1 
+        fibMMm1 = fibM 
+        fibM  = fibMMm2 + fibMMm1 
+    offset = -1 
+    while (fibM > 1): 
+        i = min(offset+fibMMm2, len(arr)-1) 
+        f+=1
+        if (arr[i] < x): 
+            fibM  = fibMMm1 
+            fibMMm1 = fibMMm2 
+            fibMMm2 = fibM - fibMMm1 
+            offset = i 
+        elif (arr[i] > x): 
+            fibM  = fibMMm2 
+            fibMMm1 = fibMMm1 - fibMMm2 
+            fibMMm2 = fibM - fibMMm1 
+        else: 
+            return i 
+    if(fibMMm1 and arr[offset+1]==x): 
+        return offset+1 
+    return -1
+
+index = fibonacci_search(a, key)
+print(f"Number of Operations in Fibonacci Search: {f}")
 print(f"{key} found at index {index}")
