@@ -59,34 +59,34 @@ print(f"Number of Operations in Sentinel Search: {e}")
 
 #Fibonacci Search
 f=0
-def fibonacci_search(arr, x):
+def fibonacci_search(arr,x):
     global f
-    fibMMm2 = 0 
-    fibMMm1 = 1 
-    fibM = fibMMm2 + fibMMm1 
-    while (fibM < len(arr)): 
-        fibMMm2 = fibMMm1 
-        fibMMm1 = fibM 
-        fibM  = fibMMm2 + fibMMm1 
-    offset = -1 
-    while (fibM > 1): 
-        i = min(offset+fibMMm2, len(arr)-1) 
+    fib2=0 
+    fib1=1 
+    fibM=fib2+fib1 
+    while (fibM<len(arr)): 
+        fib2=fib1 
+        fib1=fibM 
+        fibM=fib2+fib1 
+    offset=-1 
+    while(fibM>1): 
+        i=min(offset+fib2,len(arr)-1) 
         f+=1
-        if (arr[i] < x): 
-            fibM  = fibMMm1 
-            fibMMm1 = fibMMm2 
-            fibMMm2 = fibM - fibMMm1 
-            offset = i 
-        elif (arr[i] > x): 
-            fibM  = fibMMm2 
-            fibMMm1 = fibMMm1 - fibMMm2 
-            fibMMm2 = fibM - fibMMm1 
+        if(arr[i]<x): 
+            fibM=fib1 
+            fib1=fib2 
+            fib2=fibM-fib1 
+            offset=i 
+        elif(arr[i]>x): 
+            fibM=fib2 
+            fib1=fib1-fib2 
+            fib2=fibM-fib1 
         else: 
             return i 
-    if(fibMMm1 and arr[offset+1]==x): 
+    if(fib1 and arr[offset+1]==x): 
         return offset+1 
     return -1
 
-index = fibonacci_search(a, key)
+index=fibonacci_search(a,key)
 print(f"Number of Operations in Fibonacci Search: {f}")
 print(f"{key} found at index {index}")
