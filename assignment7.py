@@ -49,7 +49,7 @@ def shell_sort(arr):
 x=int(input("Enter the number of Students: "))
 arr=[]
 for i in range(x):
-    num=int(input(f"Enter the Percentage of {i+1} Student: "))
+    num=float(input(f"Enter the Percentage of {i+1} Student: "))
     arr.append(num)
 
 print("Original array: ",arr)
