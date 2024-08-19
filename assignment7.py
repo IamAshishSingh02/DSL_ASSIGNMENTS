@@ -1,5 +1,5 @@
 #Bubble Sort
-def bubble_sort(arr):
+def bub_sort(arr):
     n=len(arr)
     for i in range(n-1):
         for j in range(0,n-i-1):
@@ -8,18 +8,18 @@ def bubble_sort(arr):
     return arr
 
 #Selection Sort
-def selection_sort(arr):
+def sel_sort(arr):
     n=len(arr)
     for i in range(n-1):
-        min_idx=i
+        min_i=i
         for j in range(i+1,n):
-            if arr[j]<arr[min_idx]:
-                min_idx=j
-        arr[i],arr[min_idx]=arr[min_idx],arr[i]
+            if arr[j]<arr[min_i]:
+                min_i=j
+        arr[i],arr[min_i]=arr[min_i],arr[i]
     return arr
 
 #Insertion Sort
-def insertion_sort(arr):
+def ins_sort(arr):
     n=len(arr)
     for i in range(1,n):
         key=arr[i]
@@ -54,17 +54,17 @@ for i in range(x):
 
 print("Original array: ",arr)
 
-arr_bubble=arr.copy()
-arr_bubble=bubble_sort(arr_bubble)
-print("Bubble Sorted Array: ",arr_bubble)
+arr_bub=arr.copy()
+arr_bub=bub_sort(arr_bub)
+print("Bubble Sorted Array: ",arr_bub)
 
-arr_selection=arr.copy()
-arr_selection=selection_sort(arr_selection)
-print("Selection Sorted Array: ",arr_selection)
+arr_sel=arr.copy()
+arr_sel=sel_sort(arr_sel)
+print("Selection Sorted Array: ",arr_sel)
 
-arr_insertion=arr.copy()
-arr_insertion=insertion_sort(arr_insertion)
-print("Insertion Sorted Array: ",arr_insertion)
+arr_ins=arr.copy()
+arr_ins=ins_sort(arr_ins)
+print("Insertion Sorted Array: ",arr_ins)
 
 arr_shell=arr.copy()
 arr_shell=shell_sort(arr_shell)
