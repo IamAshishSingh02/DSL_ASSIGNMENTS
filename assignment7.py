@@ -33,30 +33,31 @@ def ins_sort(arr):
 #Shell Sort
 def shell_sort(arr):
     n=len(arr)
-    x=n//2
-    while(x>0):
-        for i in range(x,n):
-            temp=arr[i]
+    g=n//2
+    while(g>0):
+        for i in range(g,n):
+            tmp=arr[i]
             j=i
-            while(j>=x and arr[j-x]>temp):
-                arr[j]=arr[j-x]
-                j-=x
-            arr[j]=temp
-        x//=2
+            while(j>=g and arr[j-g]>tmp):
+                arr[j]=arr[j-g]
+                j-=g
+            arr[j]=tmp
+        g//=2
     return arr
 
 #Input
-x=int(input("Enter the number of Students: "))
+x=int(input("\nEnter the number of Students: "))
+print("\n")
 arr=[]
 for i in range(x):
     num=float(input(f"Enter the Percentage of {i+1} Student: "))
     arr.append(num)
 
-print("Original array: ",arr)
+print("\nOriginal array: ",arr)
 
 arr_bub=arr.copy()
 arr_bub=bub_sort(arr_bub)
-print("Bubble Sorted Array: ",arr_bub)
+print("\nBubble Sorted Array: ",arr_bub)
 
 arr_sel=arr.copy()
 arr_sel=sel_sort(arr_sel)
@@ -70,4 +71,5 @@ arr_shell=arr.copy()
 arr_shell=shell_sort(arr_shell)
 print("Shell Sorted Array: ",arr_shell)
 
-print("Top 5 Scores: ",arr_shell[-5:])
+#Top 5 Scores
+print("\nTop 5 Scores: ",arr_bub[-5:])          
