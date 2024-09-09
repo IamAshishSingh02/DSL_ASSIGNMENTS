@@ -44,6 +44,28 @@ def rad_sort2(arr,n):
         mult*=10
     return arr
 
+#Quick Sort
+def part(arr,st,end):
+    pvt=arr[st]
+    l=st+1
+    r=end
+    while True:
+        while(l<=r and arr[l]<=pvt):
+            l+=1
+        while(l<=r and arr[r]>=pvt):
+            r-=1
+        if(l>r):
+            break
+        arr[l],arr[r]=arr[r],arr[l]
+    arr[st],arr[r]=arr[r],arr[st]
+    return r
+
+def qk_sort(arr,st,end):
+    if(st<end):
+        pvt_idx=part(arr,st,end)
+        qk_sort(arr,st,pvt_idx-1)
+        qk_sort(arr,pvt_idx+1,end)
+
 #Input
 n=int(input("\nEnter the number of Students: "))
 print("\n")
@@ -62,5 +84,9 @@ rad2_arr=arr.copy()
 rad2_arr=rad_sort2(rad2_arr,n)
 print("Radix Sort using Counting Sort: ",rad2_arr)
 
+qk_arr=arr.copy()
+qk_arr=qk_sort(qk_arr,0,len(arr)-1)
+print("Quick Sorted array: ",qk_arr)
+
 #Top 5 Scores
-print("\nTop 5 Scores: ",rad2_arr[-5:])
+print("\nTop 5 Scores: ",qk_arr[-5:])
